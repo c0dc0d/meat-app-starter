@@ -1,5 +1,3 @@
-import { ShoppingCartComponent } from './restaurants-detail/shopping-cart/shopping-cart.component';
-import { RestaurantsService } from './restaurants/restaurants.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
@@ -16,6 +14,9 @@ import { RestaurantComponent } from './restaurants/restaurant/restaurant.compone
 import { RestaurantsDetailComponent } from './restaurants-detail/restaurants-detail.component';
 import { MenuComponent } from './restaurants-detail/menu/menu.component';
 import { MenuItemComponent } from './restaurants-detail/menu-item/menu-item.component';
+import { ReviewsComponent } from './restaurants-detail/reviews/reviews.component';
+import { ShoppingCartComponent } from './restaurants-detail/shopping-cart/shopping-cart.component';
+import { RestaurantsService } from './restaurants/restaurants.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MenuItemComponent } from './restaurants-detail/menu-item/menu-item.comp
     RestaurantsDetailComponent,
     MenuComponent,
     MenuItemComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    ReviewsComponent
   ],
   imports: [
     BrowserModule,
