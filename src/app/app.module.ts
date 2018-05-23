@@ -17,6 +17,7 @@ import { MenuItemComponent } from './restaurants-detail/menu-item/menu-item.comp
 import { ReviewsComponent } from './restaurants-detail/reviews/reviews.component';
 import { ShoppingCartComponent } from './restaurants-detail/shopping-cart/shopping-cart.component';
 import { RestaurantsService } from './restaurants/restaurants.service';
+import { ShoppingCartService } from './restaurants-detail/shopping-cart/shopping-cart.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { RestaurantsService } from './restaurants/restaurants.service';
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [RestaurantsService],
+  providers: [RestaurantsService, ShoppingCartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
