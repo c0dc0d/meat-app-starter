@@ -1,10 +1,10 @@
-<div class="col-xs-12"  *ngIf="!items">
+<div class="col-xs-12"  *ngIf="items.length === 0">
   <p>
     Nao ha itens no seu carrinho. Que tal comecar por <a [routerLink]="['/restaurants']">aqui</a>?
   </p>
 </div>
 
-<div class="col-xs-12 table-responsive" *ngIf="items">
+<div class="col-xs-12 table-responsive" *ngIf="items.length > 0">
 
   <table class="table table-striped">
     <thead>
@@ -19,14 +19,14 @@
     <tbody>
     <tr *ngFor="let item of items">
       <td class="text-center">
-        <a (click)="emitIncreaseQty(item)" class="btn btn-sm"><i class="fa fa-minus"></i></a>
+        <a (click)="emitDecreaseQty(item)" class="btn btn-sm"><i class="fa fa-minus"></i></a>
         {{ item.quantity }}
-        <a (click)="emitDecreaseQty(item)" class="btn btn-sm"><i class="fa fa-plus"></i></a>
+        <a (click)="emitIncreaseQty(item)" class="btn btn-sm"><i class="fa fa-plus"></i></a>
       </td>
       <td>{{ item.menuItem.name }}e</td>
 
-      <td>{{ item.menuItem.description }}/td>
-      <td class="text-right">{{ item.value() }}</td>
+      <td>{{ item.menuItem.description }}</td>
+      <td class="text-right">{{ item.value() | currency: 'BRL': true }}</td>
       <td class="text-right">
         <a (click)="emitRemove(item)" class="btn btn-sm danger"><i class="fa fa-remove"></i></a>
       </td>
