@@ -23,6 +23,10 @@ export class OrderComponent implements OnInit {
   ngOnInit() {
   }
 
+  itemsValue(): number {
+    return this.orderService.itemsValue()
+  }
+
   cartItems(): CartItem[] {
     return this.orderService.cartItems()
   }
